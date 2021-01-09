@@ -1,6 +1,6 @@
 # projeto_perguntas
 
-A new Flutter project.
+Meu primeiro projeto em Flutter, onde o cliente responde três perguntas e, como resultado, recebe uma mensagem personalizada.
 
 ## Getting Started
 
