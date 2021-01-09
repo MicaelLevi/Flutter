@@ -1,6 +1,6 @@
 # expenses
 
-A new Flutter project.
+Pequeno aplicativo para gerencia de despesas.
 
 ## Getting Started
 
