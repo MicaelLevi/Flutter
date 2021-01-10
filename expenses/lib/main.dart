@@ -1,10 +1,12 @@
 import 'dart:math';
 
-import 'components/chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
 
 import 'components/transactionForm.dart';
 import 'components/transactionList.dart';
+import 'components/chart.dart';
 import 'models/transaction.dart';
 
 main() => runApp(ExpensesApp());
@@ -12,7 +14,15 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Intl.defaultLocale = 'pt_BR';
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('pt', 'BR'),
+      ],
       home: MyHomePage(),
       theme: ThemeData(
         primarySwatch: Colors.purple,
