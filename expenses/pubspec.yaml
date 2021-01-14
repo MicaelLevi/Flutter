@@ -21,13 +21,11 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-#  intl: 0.17.0-nullsafety.2
+  intl: 0.17.0-nullsafety.2
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  #flutter_localizations:
-  #  sdk: flutter
   
 
 
