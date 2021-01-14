@@ -110,12 +110,17 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+
     bool isLandscape = mediaQuery.orientation == Orientation.landscape;
+
+    final iconList = Platform.isIOS ? CupertinoIcons.square_list : Icons.list;
+    final iconChart =
+        Platform.isIOS ? CupertinoIcons.chart_pie : Icons.show_chart;
 
     final actions = [
       if (isLandscape)
         _getIconButton(
-          _showChart ? Icons.list : Icons.show_chart,
+          _showChart ? iconList : iconChart,
           () {
             setState(() {
               _showChart = !_showChart;
@@ -145,21 +150,23 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
-    final bodyPage = SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          if (_showChart || !isLandscape)
-            Container(
-              height: availableHeight * (isLandscape ? 0.8 : 0.3),
-              child: Chart(_recentTransactions),
-            ),
-          if (!_showChart || !isLandscape)
-            Container(
-              height: availableHeight * (isLandscape ? 1 : 0.7),
-              child: TransactionList(_transactions, _deteleTransaction),
-            ),
-        ],
+    final bodyPage = SafeArea(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (_showChart || !isLandscape)
+              Container(
+                height: availableHeight * (isLandscape ? 0.8 : 0.3),
+                child: Chart(_recentTransactions),
+              ),
+            if (!_showChart || !isLandscape)
+              Container(
+                height: availableHeight * (isLandscape ? 1 : 0.7),
+                child: TransactionList(_transactions, _deteleTransaction),
+              ),
+          ],
+        ),
       ),
     );
 
