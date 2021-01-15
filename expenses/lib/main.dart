@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 
-import 'components/transactionForm.dart';
-import 'components/transactionList.dart';
-import 'components/chart.dart';
+import 'components/transaction/transactionForm.dart';
+import 'components/transaction/transactionList.dart';
+import 'components/chart/chart.dart';
 import 'models/transaction.dart';
 
 main() => runApp(ExpensesApp());

@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
-import '../components/chartBar.dart';
-import '../models/transaction.dart';
+import 'chartBar.dart';
+import '../../models/transaction.dart';
 
 import 'package:flutter/material.dart';
 
